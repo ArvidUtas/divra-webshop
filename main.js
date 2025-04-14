@@ -182,31 +182,33 @@ async function fetchProducts() {
   }
 }
 
-async function populateProducts() {
+async function populateProducts(category) {
   await fetchProducts();
   let output = `<div class="row">`;
   for (let i in products){
-    output += `
-  <div class="col-sm-6 col-lg-3 my-3">
-    <div class="card h-100 shadow scale-on-hover rounded-5" role="button">
-      <div class="card-body" data-bs-toggle="modal" data-bs-target="#productModal" onclick="populateProductPopUp(${i})">
-        <!-- pics -->
-        <div class="position-relative mt-3 card-image-container">
-          <img src="${products[i].image}" class="card-img-top card-image-custom position-absolute top-50 start-50 translate-middle img-fluid w-75 object-fit-contain" alt="${products[i].title}">
-        </div>
-        <!-- info -->
-        <div class="mt-4 ms-2">
-          <h5 class="product-title fw-bold lh-sm fs-6">${getFirstFiveWords(products[i].title)}</h5>
-        </div>
-        </div>
-        <!-- bottom section -->
-        <div class="d-flex justify-content-between align-items-center mx-3 mb-4">
-          <span class="price-text">€${products[i].price.toFixed(2)}</span>
-          <button class="btn btn-custom px-3 py-2 rounded-5" onclick="addToCart(${i})">Add to cart</button>
+    if (category === null || category === products[i].category){
+      output += `
+    <div class="col-sm-6 col-lg-3 my-3">
+      <div class="card h-100 shadow scale-on-hover rounded-5" role="button">
+        <div class="card-body" data-bs-toggle="modal" data-bs-target="#productModal" onclick="populateProductPopUp(${i})">
+          <!-- pics -->
+          <div class="position-relative mt-3 card-image-container">
+            <img src="${products[i].image}" class="card-img-top card-image-custom position-absolute top-50 start-50 translate-middle img-fluid w-75 object-fit-contain" alt="${products[i].title}">
+          </div>
+          <!-- info -->
+          <div class="mt-4 ms-2">
+            <h5 class="product-title fw-bold lh-sm fs-6">${getFirstFiveWords(products[i].title)}</h5>
+          </div>
+          </div>
+          <!-- bottom section -->
+          <div class="d-flex justify-content-between align-items-center mx-3 mb-4">
+            <span class="price-text">€${products[i].price.toFixed(2)}</span>
+            <button class="btn btn-custom px-3 py-2 rounded-5" onclick="addToCart(${i})">Add to cart</button>
 
+        </div>
       </div>
-    </div>
-  </div>`
+    </div>`
+    }
   }
 
   output += `</div>`;
