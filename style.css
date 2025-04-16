@@ -24,9 +24,13 @@
     background-color: #e64a19;
 }
 
-.product-title {
-    height: 3rem;
-    overflow: hidden;
+.btn-custom-dropdown {
+    background-color: #EB5E28;
+    border: none;
+    color: white;
+}
+.btn-custom-dropdown:hover {
+    background-color: #e64a19;
 }
 
 .container-custom {
