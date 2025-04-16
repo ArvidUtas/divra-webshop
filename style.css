@@ -33,11 +33,6 @@
     background-color: #e64a19;
 }
 
-.product-title {
-    height: 3rem;
-    overflow: hidden;
-}
-
 .container-custom {
     min-height: 90vh;
     display: flex;

@@ -36,7 +36,6 @@
               <img class="nav-icon" src="./img/nav/shopping-cart.png" alt="Shopping Cart Icon" height="20"
                 draggable="false">
                 <span id="cart-counter" class="position-absolute top-25 start-100 translate-middle badge rounded-pill btn-custom">
-                  0
                   <span class="visually-hidden">items in cart</span>
                 </span>
             </a>
@@ -79,16 +78,16 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="container" id="all-products">
     <hr>
   </div>
-  <div class="container mt-5">
-    <h1 class="text-center" id="all-products">All Products</h1>
-    <div class="dropdown">
-      <button class="btn btn-custom-dropdown px-4 py-2 rounded-5 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+  <div class="container mt-5 align-items-center">
+    <h1 class="text-center" id="category-header">All Products</h1>
+    <div class="dropdown text-center">
+      <button class="btn btn-custom-dropdown px-2 mt-2 rounded-5 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         Choose category
       </button>
-      <ul class="dropdown-menu rounded-5">
+      <ul class="dropdown-menu rounded-5" id="category-dropdown">
         <li><span class="dropdown-item-text"> </span></li>
         <li><span class="dropdown-item-text"></span></li>
         <li><a class="dropdown-item" type="button" onclick="populateProducts(null)">All products</a></li>
