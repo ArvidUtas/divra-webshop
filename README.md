@@ -1,6 +1,6 @@
 # web shop
 
-Developed by [Arvid Utas] (https://github.com/ArvidUtas) 
+Developed by [Arvid Utas](https://github.com/ArvidUtas) 
 
 This is a continuation on a project developed by:
 
